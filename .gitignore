@@ -1,0 +1,44 @@
+# Compiled output and packaged URCaps
+dist/
+target/
+out-tsc/
+tmp/
+bazel-out/
+
+# Dependencies
+node_modules/
+npm/
+node/
+
+machine-tending-io-interface-frontend/dist/
+machine-tending-io-interface-frontend/node_modules/
+machine-tending-io-interface-frontend/.angular/cache/
+# Angular cache and coverage
+.angular/cache/
+coverage/
+
+# Profiling and logs
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+npm-debug.log
+yarn-error.log
+testem.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# System files
+.DS_Store
+Thumbs.db

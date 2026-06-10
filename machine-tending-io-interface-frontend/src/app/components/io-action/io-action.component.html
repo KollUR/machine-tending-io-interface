@@ -1,0 +1,25 @@
+@if (contributedNode) {
+    <div class="inline-component">
+        <ur-label [label]="'presenter.io-action.label.door_action' | translate"></ur-label>
+        <ur-radio-group
+            [value]="contributedNode.parameters.doorAction"
+            buttonPosition="inline"
+            (radioChange)="changeDoorAction($event.value)"
+        >
+            <ur-radio-button
+                [checked]="contributedNode.parameters.doorAction === openAction"
+                [value]="openAction"
+                [attr.data-testid]="'io-action-door-open'"
+            >
+                {{ 'presenter.io-action.label.open_door' | translate }}
+            </ur-radio-button>
+            <ur-radio-button
+                [checked]="contributedNode.parameters.doorAction === closeAction"
+                [value]="closeAction"
+                [attr.data-testid]="'io-action-door-close'"
+            >
+                {{ 'presenter.io-action.label.close_door' | translate }}
+            </ur-radio-button>
+        </ur-radio-group>
+    </div>
+}

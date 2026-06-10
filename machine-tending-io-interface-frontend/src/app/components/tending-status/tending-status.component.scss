@@ -1,0 +1,64 @@
+@import '../../../styles.scss';
+
+.tending-status {
+    padding: 1rem;
+
+    &__title {
+        margin: 0 0 0.75rem;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__led {
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+        // Assigned but currently low.
+        background: var(--color-icon-neutral, #9e9e9e);
+
+        // Assigned and currently high.
+        &.is-high {
+            background: var(--color-icon-success, #2e7d32);
+            box-shadow: 0 0 0.25rem var(--color-icon-success, #2e7d32);
+        }
+
+        // No signal mapped to this function yet.
+        &.is-unassigned {
+            background: transparent;
+            border: 1px solid var(--color-border-secondary, #c4c4c4);
+        }
+    }
+
+    &__label {
+        font-weight: 500;
+    }
+
+    &__signal {
+        margin-left: auto;
+        color: var(--color-font-secondary, #6b6b6b);
+
+        &.is-muted {
+            font-style: italic;
+        }
+    }
+
+    &__state {
+        min-width: 2.5rem;
+        text-align: right;
+        color: var(--color-font-secondary, #6b6b6b);
+    }
+}

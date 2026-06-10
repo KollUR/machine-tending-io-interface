@@ -1,0 +1,52 @@
+{
+  "applicationNodes": [ 
+    {
+      "translationPath": "assets/i18n/",
+      "behaviorURI": "io-settings.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "sko-inc-machine-tending-io-interface-io-settings"
+    }
+    ],
+  "programNodes": [ 
+    {
+      "excludeFromToolbox": false,
+      "translationPath": "assets/i18n/",
+      "iconURI": "assets/icons/machine-tending-io-interface.svg",
+      "behaviorURI": "io-action.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "sko-inc-machine-tending-io-interface-io-action"
+    }],
+  "smartSkills": [ 
+    {
+      "name": "sko-inc-machine-tending-io-interface-load-part",
+      "iconURI": "assets/icons/machine-tending-io-interface.svg",
+      "presenterURI": "main.js",
+      "componentTagName": "sko-inc-machine-tending-io-interface-load-part",
+      "behaviorURI": "load-part.worker.js",
+      "translationPath": "assets/i18n/"
+    },
+    {
+      "name": "sko-inc-machine-tending-io-interface-unload-part",
+      "iconURI": "assets/icons/machine-tending-io-interface.svg",
+      "presenterURI": "main.js",
+      "componentTagName": "sko-inc-machine-tending-io-interface-unload-part",
+      "behaviorURI": "unload-part.worker.js",
+      "translationPath": "assets/i18n/"
+    }],
+  "sidebarItems": [ 
+    {
+      "name": "sko-inc-machine-tending-io-interface-tending-status",
+      "iconURI": "assets/icons/machine-tending-io-interface.svg",
+      "presenterURI": "main.js",
+      "componentTagName": "sko-inc-machine-tending-io-interface-tending-status",
+      "behaviorURI": "tending-status.worker.js",
+      "translationPath": "assets/i18n/"
+    }],
+  "operatorScreens": [ 
+    {
+      "translationPath": "assets/i18n/",
+      "behaviorURI": "tending-overview.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "sko-inc-machine-tending-io-interface-tending-overview"
+    }]
+}

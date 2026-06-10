@@ -1,0 +1,23 @@
+<section class="tending-status">
+    <h2 class="tending-status__title">{{ 'presenter.tending-status.title' | translate }}</h2>
+
+    <ul class="tending-status__list">
+        @for (row of rows(); track row.labelKey) {
+            <li class="tending-status__row">
+                <span class="tending-status__led"
+                      [class.is-high]="row.assigned && row.isHigh"
+                      [class.is-unassigned]="!row.assigned"
+                      [attr.data-testid]="'tending-status-led-' + row.labelKey"></span>
+                <span class="tending-status__label">{{ row.labelKey | translate }}</span>
+                @if (row.assigned) {
+                    <span class="tending-status__signal">{{ row.signalID }}</span>
+                    <span class="tending-status__state">
+                        {{ (row.isHigh ? 'presenter.tending-status.high' : 'presenter.tending-status.low') | translate }}
+                    </span>
+                } @else {
+                    <span class="tending-status__signal is-muted">{{ 'presenter.tending-status.unassigned' | translate }}</span>
+                }
+            </li>
+        }
+    </ul>
+</section>

@@ -1,0 +1,12 @@
+metadata:
+  vendorID: "sko-inc"
+  urcapID: "machine-tending-io-interface"
+  vendorName: "Sko Inc"
+  urcapName: "Machine Tending IO Interface"
+  version: 1.0.0
+artifacts:
+  webArchives:
+  - id: "machine-tending-io-interface-frontend"
+    folder: "machine-tending-io-interface-frontend"
+    devUrl: http://host.gateway.ip:4200/
+  

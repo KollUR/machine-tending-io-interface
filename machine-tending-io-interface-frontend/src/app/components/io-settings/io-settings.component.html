@@ -1,0 +1,81 @@
+@if (applicationNode) {
+    <section class="io-settings">
+        <p class="io-settings__intro">{{ 'presenter.io-settings.intro' | translate }}</p>
+
+        <div class="io-settings__scroll">
+            <section class="io-settings__group">
+                <h2 class="io-settings__group-title">{{ 'presenter.io-settings.heading.outputs' | translate }}</h2>
+
+                @if (outputOptions.length) {
+                    <div class="io-settings__fields">
+                        @for (assignment of outputAssignments; track assignment.key) {
+                            <div class="io-settings__field">
+                                <ur-dropdown
+                                    [label]="assignment.labelKey | translate"
+                                    [options]="outputOptions"
+                                    bindValue="value"
+                                    [selectedOption]="getSelectedOutput(assignment.key)"
+                                    [valid]="!isOutputDuplicate(assignment.key)"
+                                    (selectionChange)="setOutput(assignment.key, $event)"
+                                    [attr.data-testid]="'io-settings-output-' + assignment.key"
+                                ></ur-dropdown>
+                                @if (isOutputDuplicate(assignment.key)) {
+                                    <p class="io-settings__conflict" role="alert"
+                                       [attr.data-testid]="'io-settings-output-conflict-' + assignment.key">
+                                        {{ 'presenter.io-settings.conflict' | translate }}
+                                    </p>
+                                }
+                            </div>
+                        }
+                    </div>
+                } @else {
+                    <p class="io-settings__empty">{{ 'presenter.io-settings.empty.outputs' | translate }}</p>
+                }
+            </section>
+
+            <section class="io-settings__group">
+                <h2 class="io-settings__group-title">{{ 'presenter.io-settings.heading.inputs' | translate }}</h2>
+
+                @if (inputOptions.length) {
+                    <div class="io-settings__fields">
+                        @for (assignment of inputAssignments; track assignment.key) {
+                            <div class="io-settings__field">
+                                <ur-dropdown
+                                    [label]="assignment.labelKey | translate"
+                                    [options]="inputOptions"
+                                    bindValue="value"
+                                    [selectedOption]="getSelectedInput(assignment.key)"
+                                    [valid]="!isInputDuplicate(assignment.key)"
+                                    (selectionChange)="setInput(assignment.key, $event)"
+                                    [attr.data-testid]="'io-settings-input-' + assignment.key"
+                                ></ur-dropdown>
+                                @if (isInputDuplicate(assignment.key)) {
+                                    <p class="io-settings__conflict" role="alert"
+                                       [attr.data-testid]="'io-settings-input-conflict-' + assignment.key">
+                                        {{ 'presenter.io-settings.conflict' | translate }}
+                                    </p>
+                                }
+                            </div>
+                        }
+                    </div>
+                } @else {
+                    <p class="io-settings__empty">{{ 'presenter.io-settings.empty.inputs' | translate }}</p>
+                }
+            </section>
+
+            <section class="io-settings__group io-settings__group--narrow">
+                <h2 class="io-settings__group-title">{{ 'presenter.io-settings.heading.timeout' | translate }}</h2>
+
+                <ur-dialog-input
+                    type="number"
+                    [label]="'presenter.io-settings.label.timeout' | translate"
+                    [unit]="'s'"
+                    [value]="applicationNode.parameters.timeoutSeconds?.toString()"
+                    [validation]="{ min: timeoutMin, max: timeoutMax }"
+                    (valueChanged)="setTimeoutSeconds($event)"
+                    [attr.data-testid]="'io-settings-timeout'"
+                ></ur-dialog-input>
+            </section>
+        </div>
+    </section>
+}

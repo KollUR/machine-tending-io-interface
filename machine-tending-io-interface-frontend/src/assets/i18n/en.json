@@ -1,0 +1,79 @@
+{
+        "application": {
+          "nodes": {
+            "sko-inc-machine-tending-io-interface-io-settings": {
+              "title": "Machine Tending IO",
+              "supportiveText": "Assign the robot's digital IO to the CNC door interface"
+              }
+        }
+    },
+        "presenter": {
+          "tending-status": {
+            "title": "CNC IO Status",
+            "unassigned": "Not assigned",
+            "high": "High",
+            "low": "Low"
+          },
+          "io-action": {
+            "label": {
+              "door_action": "CNC Door",
+              "open_door": "Open",
+              "close_door": "Close"
+            }
+          },
+          "io-settings": {
+            "intro": "Map the robot's digital IO to the CNC machine's door interface. Assign each door function below to the digital output or input wired to the machine, then set a default movement timeout. These signals are shared by every machine tending program in this application.",
+            "heading": {
+              "outputs": "Controller Digital Outputs",
+              "inputs": "Controller Digital Inputs",
+              "timeout": "Timeout"
+            },
+            "label": {
+              "open_door": "Open Door",
+              "close_door": "Close Door",
+              "door_safety_switch_one": "Door Safety Switch One",
+              "door_safety_switch_two": "Door Safety Switch Two",
+              "door_is_closed": "Door Is Closed",
+              "door_is_open": "Door Is Open",
+              "timeout": "Default timeout"
+            },
+            "empty": {
+              "outputs": "No digital output signals are available on the robot.",
+              "inputs": "No digital input signals are available on the robot."
+            },
+            "conflict": "This signal is already assigned to another function. Choose a different signal."
+          }
+        },
+        "program": {
+          "tree": {
+            "nodes": {
+              "sko-inc-machine-tending-io-interface-io-action": "Io Action"
+          }
+        }
+      },
+        "program-node-labels": {
+            "io-action": {
+                "nodeTitle": "Door Action",
+                "subTitle": "{{ dynamicValue }}"
+            }
+        },
+        "smart-skills": {
+          "sko-inc-machine-tending-io-interface-load-part": {
+            "title": "Load Part"
+            },
+          "sko-inc-machine-tending-io-interface-unload-part": {
+            "title": "Unload Part"
+            }
+    },
+        "sidebar-items": {
+          "sko-inc-machine-tending-io-interface-tending-status": {
+            "title": "Tending Status"
+            }
+    },
+        "operator-screen": {
+          "sko-inc-machine-tending-io-interface-tending-overview": {
+            "title": "Tending Overview"
+            }
+        
+    }
+}
