@@ -8,5 +8,5 @@ artifacts:
   webArchives:
   - id: "machine-tending-io-interface-frontend"
     folder: "machine-tending-io-interface-frontend"
-    devUrl: http://host.gateway.ip:4200/
+
   
